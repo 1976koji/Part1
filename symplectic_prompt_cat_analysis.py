@@ -108,13 +108,17 @@ cats_100 = [
 ]         # ← 先ほどの 100 文コーパス
 
 
+
+
 # ===========================================
 #  動的ペア抽出 + ペア別 Iξ 評価 版
 # ===========================================
 import os, statistics, tqdm, openai, numpy as np
 from janome.tokenizer import Tokenizer
 
+
 # ---------------- 0) OpenAI 設定 ----------------
+openai.api_key = os.getenv("OPENAI_API_KEY")
 #openai.api_key = os.getenv("OPENAI_API_KEY", "XXX")  # ←要変更
 MODEL_GEN   = "gpt-4o-mini"
 MODEL_EMBED = "text-embedding-3-large"
